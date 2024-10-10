@@ -10,4 +10,4 @@
       changed_when: false
 
   roles:
-    - role: geerlingguy.node_exporter
+    - role: vgrid.frr_exporter

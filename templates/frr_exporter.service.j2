@@ -1,0 +1,11 @@
+[Unit]
+Description=FrrExporter
+
+[Service]
+TimeoutStartSec=0
+User=frr_exporter
+ExecStart={{ frr_exporter_bin_path }} --web.listen-address={{ frr_exporter_host }}:{{ frr_exporter_port }} {{ frr_exporter_options }}
+Restart={{ frr_exporter_restart }}
+
+[Install]
+WantedBy=multi-user.target

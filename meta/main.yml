@@ -1,10 +1,10 @@
 ---
 dependencies: []
 galaxy_info:
-  author: geerlingguy
-  role_name: node_exporter
-  description: Prometheus' node_exporter for Linux hosts.
-  company: Midwestern Mac, LLC
+  author: vgrid
+  role_name: frr_exporter
+  description: Prometheus' frr_exporter for Linux hosts.
+  company: SaferCities
   license: license (MIT)
   min_ansible_version: 2.10
   platforms:
@@ -41,6 +41,6 @@ galaxy_info:
     - containers
     - monitoring
     - prometheus
-    - node
+    - frr
     - exporter
     - metrics

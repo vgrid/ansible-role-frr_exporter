@@ -3,18 +3,18 @@
   delegate_to: localhost
   become: false
   uri:
-    url: "https://api.github.com/repos/prometheus/node_exporter/releases/latest"
+    url: "https://api.github.com/repos/tynany/frr_exporter/releases/latest"
     body_format: json
   register: _github_release
   until: _github_release.status == 200
   run_once: true
   retries: 5
 
-- name: Set node_exporter_version
+- name: Set frr_exporter_version
   set_fact:
-    node_exporter_version: "{{ _github_release.json.tag_name
+    frr_exporter_version: "{{ _github_release.json.tag_name
       | regex_replace('^v?([0-9\\.]+)$', '\\1') }}"
 
-- name: Set node_exporter_download_url
+- name: Set frr_exporter_download_url
   set_fact:
-    node_exporter_download_url: "https://github.com/prometheus/node_exporter/releases/download/v{{ node_exporter_version }}/node_exporter-{{ node_exporter_version }}.linux-{{ node_exporter_arch }}.tar.gz"
+    frr_exporter_download_url: "https://github.com/tynany/frr_exporter/releases/download/v{{ frr_exporter_version }}/frr_exporter-{{ frr_exporter_version }}.linux-{{ frr_exporter_arch }}.tar.gz"

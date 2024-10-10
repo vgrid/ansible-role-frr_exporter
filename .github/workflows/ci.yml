@@ -10,7 +10,7 @@ name: CI
 
 defaults:
   run:
-    working-directory: 'geerlingguy.node_exporter'
+    working-directory: 'vgrid.frr_exporter'
 
 jobs:
 
@@ -21,7 +21,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
         with:
-          path: 'geerlingguy.node_exporter'
+          path: 'vgrid.frr_exporter'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v5
@@ -49,7 +49,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
         with:
-          path: 'geerlingguy.node_exporter'
+          path: 'vgrid.frr_exporter'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v5
